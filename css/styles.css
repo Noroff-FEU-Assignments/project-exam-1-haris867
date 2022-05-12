@@ -1,0 +1,360 @@
+body {
+  color: white;
+  margin: 0;
+  font-family: "Roboto";
+}
+
+/* HEADER */
+.logo-container a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+}
+
+.logo {
+  max-width: 130px;
+  margin: 20px 28px 10px 28px;
+}
+
+.header-line {
+  border: solid 1px #fcb235;
+  max-width: 85%;
+  margin-top: 0;
+}
+
+.icons i {
+  color: #fcb235;
+  font-size: 2em;
+  position: absolute;
+  top: 36px;
+}
+
+.fa-bars {
+  right: 27px;
+  cursor: pointer;
+}
+
+.fa-heart {
+  right: 70px;
+}
+
+nav {
+  display: none;
+  position: absolute;
+  right: 0px;
+  font-size: 1.2em;
+  z-index: 100000;
+  background-color: #fcb235;
+  text-transform: uppercase;
+}
+
+ul {
+  border: solid 1px #fcb235;
+  border-top-width: 2px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+li {
+  padding: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.visible {
+  display: block;
+}
+
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/*Headings*/
+
+.headings {
+  color: black;
+  width: 85%;
+  margin: 0 auto;
+  font-family: "Vidaloka";
+}
+
+.headings h1 {
+  font-size: 1.65em;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+
+.headings h2 {
+  font-size: 1.3em;
+  font-weight: 100;
+  margin-top: 0;
+}
+
+/*SLIDER*/
+
+.slider-heading {
+  color: black;
+  margin: 0 auto;
+  max-width: 300px;
+  font-size: 1.3em;
+}
+
+.slider-heading h3 {
+  font-family: "Vidaloka";
+  font-weight: 100;
+  margin-bottom: 0;
+  font-size: 1.05em;
+}
+
+.slides-container {
+  margin: 0 auto;
+  position: relative;
+  max-width: 300px;
+  /* change to 500px above to display 2 images in container*/
+  height: 210px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+  margin-top: 5px;
+}
+
+.slide img {
+  max-width: 98%;
+  border: solid 1px #fcb235;
+}
+
+.slide h4 {
+  margin: 0 auto;
+  color: black;
+  font-family: "Vidaloka";
+  font-weight: 100;
+  font-size: 1.2em;
+}
+
+.slide-post {
+  max-width: 100%;
+  text-align: center;
+}
+
+.button-container {
+  color: #fcb235;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.5em;
+}
+
+.slider-dots {
+  font-size: 0.5em;
+  padding-top: 10px;
+  display: none;
+}
+
+.circle {
+  border: solid 2px #fcb235;
+  padding: 4px;
+  height: 2px;
+  width: 2px;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.first-dot {
+  background-color: #fcb235;
+}
+
+.previous-button {
+  padding: 5px;
+}
+.next-button {
+  padding: 5px;
+}
+
+/* .slide:nth-child(1) {
+  left: 0;
+}
+.slide:nth-child(2) {
+  left: 50%;
+}
+.slide:nth-child(3) {
+  left: 200%;
+}
+.slide:nth-child(4) {
+  left: 300%;
+}
+
+.slide {
+  transform: translateX(0%);
+} */
+
+/* @media (min-width: 800px) {
+  .slides-container {
+    max-width: 515px;
+  }
+  .slider-heading {
+    max-width: 515px;
+  }
+} */
+/* @media (min-width: 1050px) {
+  .slides-container {
+    max-width: 900px;
+  }
+  .slider-heading {
+    max-width: 900px;
+  }
+} */
+
+/*TEST FLEX-CONTAINER*/
+
+.flex-container {
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.featured img {
+  max-width: 100%;
+  border: 1px solid #fcb235;
+}
+
+.featured-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.featured h3 {
+  color: black;
+  font-family: "Vidaloka";
+  margin-top: 9px;
+  font-weight: 100;
+  font-size: 1.3em;
+}
+
+.featured-icon {
+  color: #fcb235;
+  font-size: 1.7em;
+  margin: 5px;
+}
+
+@media (min-width: 600px) {
+  .flex-container {
+    max-width: 400px;
+  }
+
+  .headings h1 {
+    font-size: 1.83em;
+  }
+  .headings h2 {
+    font-size: 1.44em;
+  }
+  .slider-heading {
+    max-width: 400px;
+  }
+  .slides-container {
+    max-width: 400px;
+    height: 270px;
+  }
+}
+
+@media (min-width: 800px) {
+  .flex-container {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .featured {
+    max-width: 420px;
+    margin: 10px;
+  }
+
+  .headings h1 {
+    font-size: 2.03em;
+  }
+  .headings h2 {
+    font-size: 1.6em;
+  }
+}
+
+@media (min-width: 1000px) {
+  .flex-container {
+    max-width: 900px;
+    gap: 50px;
+  }
+
+  .slide-post {
+    max-width: 33.3%;
+  }
+
+  .featured {
+    margin: 0;
+  }
+  .slides-container {
+    max-width: 900px;
+    height: 210px;
+  }
+  .slider-heading {
+    max-width: 900px;
+  }
+  .slider-dots {
+    display: block;
+  }
+}
+
+/*TEST PAGE*/
+
+.page {
+  max-width: 300px;
+  margin: 10px auto;
+  color: black;
+}
+
+.page p {
+  font-weight: 300;
+  font-size: 1em;
+}
+
+.page img {
+  max-width: 100%;
+}
+
+/* .page h1 {
+  color: black;
+  font-family: "Vidaloka";
+  font-weight: 100;
+  margin-top: 9px;
+  font-size: 1.65em;
+} */
+
+.page-intro {
+  font-size: 1em;
+}
+
+.page-featured h2 {
+  font-size: 1.2em;
+  font-family: "Vidaloka";
+  font-weight: 100;
+}
+
+/*Page*/
+
+.page {
+  max-width: 300px;
+  margin: 10px auto;
+}
+
+.comment-section {
+  width: 300px;
+  height: 200px;
+}
