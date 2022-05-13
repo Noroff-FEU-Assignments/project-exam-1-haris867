@@ -1,5 +1,5 @@
 body {
-  color: white;
+  color: black;
   margin: 0;
   font-family: "Roboto";
 }
@@ -17,13 +17,13 @@ body {
 }
 
 .header-line {
-  border: solid 1px #fcb235;
+  border: solid 1px #da2f32;
   max-width: 85%;
   margin-top: 0;
 }
 
 .icons i {
-  color: #fcb235;
+  color: #da2f32;
   font-size: 2em;
   position: absolute;
   top: 36px;
@@ -44,12 +44,12 @@ nav {
   right: 0px;
   font-size: 1.2em;
   z-index: 100000;
-  background-color: #fcb235;
+  background-color: #da2f32;
   text-transform: uppercase;
 }
 
 ul {
-  border: solid 1px #fcb235;
+  border: solid 1px #da2f32;
   border-top-width: 2px;
   padding: 0;
   margin: 0;
@@ -116,7 +116,7 @@ nav a {
   position: relative;
   max-width: 300px;
   /* change to 500px above to display 2 images in container*/
-  height: 210px;
+  height: 250px;
   overflow: hidden;
 }
 
@@ -130,7 +130,7 @@ nav a {
 
 .slide img {
   max-width: 98%;
-  border: solid 1px #fcb235;
+  border: solid 1px #da2f32;
 }
 
 .slide h4 {
@@ -147,7 +147,7 @@ nav a {
 }
 
 .button-container {
-  color: #fcb235;
+  color: #da2f32;
   display: flex;
   justify-content: center;
   gap: 5px;
@@ -161,7 +161,7 @@ nav a {
 }
 
 .circle {
-  border: solid 2px #fcb235;
+  border: solid 2px #da2f32;
   padding: 4px;
   height: 2px;
   width: 2px;
@@ -170,14 +170,12 @@ nav a {
 }
 
 .first-dot {
-  background-color: #fcb235;
+  background-color: #da2f32;
 }
 
-.previous-button {
+.slider-button {
   padding: 5px;
-}
-.next-button {
-  padding: 5px;
+  cursor: pointer;
 }
 
 /* .slide:nth-child(1) {
@@ -224,7 +222,7 @@ nav a {
 
 .featured img {
   max-width: 100%;
-  border: 1px solid #fcb235;
+  border: 1px solid #da2f32;
 }
 
 .featured-text {
@@ -241,9 +239,41 @@ nav a {
 }
 
 .featured-icon {
-  color: #fcb235;
+  color: #da2f32;
   font-size: 1.7em;
   margin: 5px;
+}
+
+.slide-button {
+  padding: 4px 30px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto";
+  background-color: #da2f32;
+  color: white;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+/*Page*/
+
+.page {
+  max-width: 300px;
+  margin: 10px auto;
+  color: black;
+}
+
+.page-intro {
+  font-size: 1em;
+}
+
+.page p {
+  font-weight: 300;
+  font-size: 1em;
+}
+
+.page img {
+  max-width: 100%;
 }
 
 @media (min-width: 600px) {
@@ -262,7 +292,10 @@ nav a {
   }
   .slides-container {
     max-width: 400px;
-    height: 270px;
+    height: 300px;
+  }
+  .page {
+    max-width: 400px;
   }
 }
 
@@ -302,7 +335,7 @@ nav a {
   }
   .slides-container {
     max-width: 900px;
-    height: 210px;
+    height: 250px;
   }
   .slider-heading {
     max-width: 900px;
@@ -314,21 +347,6 @@ nav a {
 
 /*TEST PAGE*/
 
-.page {
-  max-width: 300px;
-  margin: 10px auto;
-  color: black;
-}
-
-.page p {
-  font-weight: 300;
-  font-size: 1em;
-}
-
-.page img {
-  max-width: 100%;
-}
-
 /* .page h1 {
   color: black;
   font-family: "Vidaloka";
@@ -337,24 +355,84 @@ nav a {
   font-size: 1.65em;
 } */
 
-.page-intro {
-  font-size: 1em;
-}
-
-.page-featured h2 {
+/* .page-featured h2 {
   font-size: 1.2em;
   font-family: "Vidaloka";
   font-weight: 100;
+} */
+
+/*Comment section*/
+
+.comment-form {
+  margin: 0 auto;
 }
 
-/*Page*/
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-.page {
-  max-width: 300px;
+form div {
+  width: 100%;
+}
+
+form div label p {
+  font-size: 1em;
+}
+
+form div input {
+  width: 95%;
+}
+
+form div textarea {
+  width: 95%;
+}
+
+form p {
+  margin: 2px 0;
+}
+
+form textarea {
+  resize: none;
+}
+
+.comment-form__button {
+  padding: 4px 30px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto";
+  background-color: #da2f32;
+  color: white;
+  text-decoration: none;
+  font-size: 0.8em;
   margin: 10px auto;
 }
 
-.comment-section {
-  width: 300px;
-  height: 200px;
+.comment {
+  margin: 5px 0;
+}
+
+.comment h4 {
+  margin: auto 5px;
+  font-size: 1.1em;
+}
+
+.comment p {
+  margin: 5px;
+}
+
+.comment-date h5 {
+  margin: 5px 2px;
+  font-size: 0.6em;
+  max-width: 90px;
+  opacity: 0.7;
+}
+
+.comment div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-author {
+  background-color: #da2f3275;
 }

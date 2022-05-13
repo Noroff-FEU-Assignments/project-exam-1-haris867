@@ -84,23 +84,36 @@
             <p>Parc Güell is a must see for tourists visiting Barcelona. Come admire the great architecture, as well as enjoy the many other attractions around it. Ride on a carousel in this beautiful park!</p>
         </div>
     </div>
-    <div class="page comment-section">
+    <hr class="header-line" />
+    <div class="page comment-form">
         <form>
             <input type="hidden" id="postId" value="1">
             <div>
-                <label for="fullname">Name</label>
+                <label for="fullname">
+                    <p>Name</p>
+                </label>
                 <input type="text" id="fullname">
             </div>
             <div>
-                <label for="email">Email</label>
+                <label for="email">
+                    <p>Email</p>
+                </label>
                 <input type="email" id="email">
             </div>
             <div>
-                <label for="comment">Comment</label>
-                <textarea id="comment" cols="30" rows="10"></textarea>
+                <label for="comment">
+                    <p>Comment</p>
+                </label>
+                <textarea id="comment" rows="2"></textarea>
             </div>
-            <input type="submit" value="Post comment!">
+            <input class="comment-form__button" type="submit" value="Post comment!">
         </form>
     </div>
+    <hr class="header-line" />
+    <div class="page comment-section">
+        
+    </div>
+    <hr class="header-line" />
+    <script src="js/comments.js"></script>
   </body>
 </html>
