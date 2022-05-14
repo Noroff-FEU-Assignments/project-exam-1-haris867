@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: black;
   margin: 0;
@@ -214,7 +218,7 @@ nav a {
 
 /*TEST FLEX-CONTAINER*/
 
-.flex-container {
+.div-container {
   max-width: 300px;
   margin: 0 auto;
   margin-top: 10px;
@@ -238,10 +242,15 @@ nav a {
   font-size: 1.3em;
 }
 
+.featured a {
+  text-decoration: none;
+}
+
 .featured-icon {
   color: #da2f32;
   font-size: 1.7em;
   margin: 5px;
+  z-index: 1000;
 }
 
 .slide-button {
@@ -277,7 +286,7 @@ nav a {
 }
 
 @media (min-width: 600px) {
-  .flex-container {
+  .div-container {
     max-width: 400px;
   }
 
@@ -300,7 +309,7 @@ nav a {
 }
 
 @media (min-width: 800px) {
-  .flex-container {
+  .div-container {
     max-width: 800px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -321,7 +330,7 @@ nav a {
 }
 
 @media (min-width: 1000px) {
-  .flex-container {
+  .div-container {
     max-width: 900px;
     gap: 50px;
   }
@@ -404,7 +413,7 @@ form textarea {
   background-color: #da2f32;
   color: white;
   text-decoration: none;
-  font-size: 0.8em;
+  font-size: 1em;
   margin: 10px auto;
 }
 
@@ -428,11 +437,26 @@ form textarea {
   opacity: 0.7;
 }
 
-.comment div {
+.comment-author {
+  background-color: #da2f3275;
   display: flex;
   justify-content: space-between;
 }
 
-.comment-author {
-  background-color: #da2f3275;
+.more-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.more-button {
+  padding: 4px 30px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto";
+  background-color: #da2f32;
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  margin: 10px auto;
+  cursor: pointer;
 }
