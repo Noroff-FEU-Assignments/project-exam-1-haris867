@@ -1,3 +1,10 @@
+const menuIcon = document.querySelector(".fa-bars");
+const nav = document.querySelector("nav");
+
+menuIcon.addEventListener("click", function () {
+  nav.classList.toggle("visible");
+});
+
 const contactUrl =
   "http://localhost/PE1/wp-json/contact-form-7/v1/contact-forms/46/feedback";
 const form = document.querySelector("form");

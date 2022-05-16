@@ -36,10 +36,10 @@ async function getPostsforSlider(url) {
 function slideShow() {
   const slides = document.querySelectorAll(".slide");
   slides.forEach(function (slide, index) {
-    if (window.innerWidth > 1050) {
+    if (window.innerWidth > 1000) {
       slide.style.left = `${index * 33.3}%`;
     }
-    if (window.innerWidth < 1050) {
+    if (window.innerWidth < 1000) {
       slide.style.left = `${index * 100}%`;
       console.log("100");
     }
@@ -73,10 +73,10 @@ function slideShow() {
   function slideShow() {
     var numberClick = 0;
 
-    if (window.innerWidth > 1050) {
+    if (window.innerWidth > 1000) {
       numberClick = 4;
     }
-    if (window.innerWidth < 1050) {
+    if (window.innerWidth < 1000) {
       numberClick = 12;
     }
 
@@ -106,12 +106,3 @@ getPostsforSlider(apiUrl);
 
 const nextButton = document.querySelector(".next-button");
 const previousButton = document.querySelector(".previous-button");
-
-// MENU
-
-const menuIcon = document.querySelector(".fa-bars");
-const nav = document.querySelector("nav");
-
-menuIcon.addEventListener("click", function () {
-  nav.classList.toggle("visible");
-});

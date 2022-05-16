@@ -18,7 +18,7 @@ async function getPost(url) {
 
   headingContainer.innerHTML = `<h1>${postContent.title}</h1>`;
 
-  postContainer.innerHTML = `<div class="featured">
+  postContainer.innerHTML = `<div class="page-content">
                                 <img src="${postContent.mainImage}" alt="Photo of ${postContent.title}">
                                 ${postContent.mainText}
 
@@ -34,6 +34,113 @@ async function getPost(url) {
                                 <h3>${postContent.activity3Title}</h3>
                                 ${postContent.activity3Text}
                             </div>`;
+
+  displayModal();
+
+  getComments();
 }
 
 getPost(postUrl);
+
+function displayModal() {
+  const postImage = document.querySelectorAll(".page-content img");
+  const modal = document.querySelector(".modal");
+  const closeButton = document.querySelector(".close-button span");
+  const modalImageContainer = document.querySelector(".modal-image");
+  const nav = document.querySelector("nav");
+
+  postImage.forEach(function (image) {
+    image.addEventListener("click", function () {
+      modal.style.display = "block";
+      nav.style.zIndex = "-1";
+      modalImageContainer.innerHTML = image.outerHTML;
+      console.log(image);
+    });
+  });
+
+  closeButton.addEventListener("click", function () {
+    modal.style.display = "none";
+    nav.style.zIndex = "0";
+  });
+
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      nav.style.zIndex = "0";
+    }
+  });
+}
+
+// Post comment
+
+const commentsUrl = "http://localhost/PE1/wp-json/wp/v2/comments?post=";
+const form = document.querySelector("form");
+
+form.addEventListener("submit", postComments);
+
+async function postComments(event) {
+  // const list = [postId, fullname, email, comment];
+  // console.log(list);
+
+  event.preventDefault();
+
+  const data = JSON.stringify({
+    post: id,
+    author_name: fullname.value,
+    author_email: email.value,
+    content: comment.value,
+  });
+
+  const response = await fetch(commentsUrl + id, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: data,
+  });
+
+  console.log(data);
+}
+
+// Display comments for this post
+
+const commentSection = document.querySelector(".comment-section");
+
+async function getComments() {
+  const response = await fetch(commentsUrl + id);
+  // console.log(response);
+  const result = await response.json();
+  console.log(result);
+
+  for (let i = 0; i < result.length; i++) {
+    const fullName = result[i].author_name;
+    const date = result[i].date + "Z";
+    const comment = result[i].content.rendered;
+
+    const dateFormat = Date.parse(date);
+
+    // console.log(dateFormat);
+
+    const newDate = new Date(dateFormat);
+    // console.log(newDate);
+
+    const finalDate = newDate.toDateString();
+    const finalTime = newDate.toLocaleTimeString();
+
+    // console.log(finalDate);
+    // console.log(finalTime);
+
+    commentSection.innerHTML += `<div class="comment">
+                                <div class="comment-author">
+                                    <h4>${fullName}</h4>
+                                    <div class="comment-date">
+                                        <h5>${finalDate}</h5>
+                                        <h5>${finalTime}</h5>
+                                    </div>
+                                    </div>
+                                    <div>
+                                        ${comment}
+                                    </div>
+                                    </div>`;
+  }
+}

@@ -22,7 +22,7 @@ body {
 
 .header-line {
   border: solid 1px #da2f32;
-  margin: 0 28px 0 28px;
+  max-width: 85%;
   margin-top: 0;
 }
 
@@ -34,7 +34,7 @@ body {
 }
 
 .fa-bars {
-  right: 28px;
+  right: 27px;
   cursor: pointer;
 }
 
@@ -46,10 +46,10 @@ nav {
   display: none;
   position: absolute;
   right: 0px;
-  font-size: 1.4em;
+  font-size: 1.2em;
+  z-index: 100000;
   background-color: #da2f32;
-  font-family: "Vidaloka";
-  z-index: 1;
+  text-transform: uppercase;
 }
 
 ul {
@@ -66,7 +66,7 @@ li {
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .visible {
@@ -97,14 +97,6 @@ nav a {
   font-size: 1.3em;
   font-weight: 100;
   margin-top: 0;
-}
-
-.headings h3 {
-  font-size: 1.1em;
-}
-
-.headings a {
-  color: #da2f32;
 }
 
 /*SLIDER*/
@@ -272,25 +264,6 @@ nav a {
   font-size: 0.8em;
 }
 
-.loading {
-  border: 7px solid #f3f3f3;
-  border-top: 7px solid #da2f32;
-  border-radius: 50%;
-  width: 90px;
-  height: 90px;
-  animation: spin 2s linear infinite;
-  margin-top: 10px;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /*Page*/
 
 .page {
@@ -305,154 +278,11 @@ nav a {
 
 .page p {
   font-weight: 300;
+  font-size: 1em;
 }
 
 .page img {
   max-width: 100%;
-  border: solid 1px #da2f32;
-}
-
-/*Comment section*/
-
-.comment-form {
-  margin: 0 28px;
-}
-.comment-section {
-  margin: 0 28px;
-}
-
-form {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-form div {
-  width: 100%;
-}
-
-form div label p {
-  font-size: 0.8em;
-}
-
-form div input {
-  width: 98%;
-  border: solid 1px #da2f32;
-}
-
-form div textarea {
-  width: 98%;
-  border: solid 1px #da2f32;
-}
-
-.input p {
-  font-size: 0.8em;
-}
-
-form p {
-  margin: 2px 0;
-  font-size: 0.8em;
-}
-
-form textarea {
-  resize: none;
-}
-
-.comment-form__button {
-  padding: 4px 30px;
-  border-radius: 5px;
-  border: none;
-  font-family: "Roboto";
-  background-color: #da2f32;
-  color: white;
-  text-decoration: none;
-  font-size: 1em;
-  margin: 10px auto;
-}
-
-.comment {
-  margin: 5px 0;
-  border: solid 1px #da2f32;
-}
-
-.comment h4 {
-  margin: auto 5px;
-  font-size: 1em;
-}
-
-.comment p {
-  margin: 5px;
-  font-size: 0.8em;
-}
-
-.comment-date h5 {
-  margin: 5px 2px;
-  font-size: 0.6em;
-  max-width: 90px;
-  opacity: 0.7;
-}
-
-.comment-author {
-  background-color: #da2f3275;
-  display: flex;
-  justify-content: space-between;
-}
-
-.more-button-container {
-  display: none;
-  justify-content: center;
-}
-
-.more-button {
-  padding: 4px 30px;
-  border-radius: 5px;
-  border: none;
-  font-family: "Roboto";
-  background-color: #da2f32;
-  color: white;
-  text-decoration: none;
-  font-size: 1em;
-  margin: 10px auto;
-  cursor: pointer;
-}
-
-.modal {
-  position: fixed;
-  overflow: auto;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  display: none;
-}
-
-.modal-image {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.modal-image img {
-  width: 100%;
-  border: solid 1px #da2f32;
-}
-
-.close-button {
-  display: flex;
-  justify-content: flex-end;
-  margin: 10px;
-  font-size: 1.5em;
-  cursor: pointer;
-}
-
-.modal-title {
-  font-family: "Vidaloka";
-  text-align: center;
-}
-
-.modal-content {
-  max-width: 350px;
-  margin: 10% auto;
 }
 
 @media (min-width: 600px) {
@@ -476,25 +306,6 @@ form textarea {
   .page {
     max-width: 400px;
   }
-
-  .page p {
-    font-size: 1.1em;
-  }
-  .modal-content {
-    max-width: 470px;
-  }
-  .author-info {
-    display: flex;
-  }
-  form div input {
-    width: 96%;
-  }
-  .comment-form {
-    margin: 0 50px;
-  }
-  .comment-section {
-    margin: 0 50px;
-  }
 }
 
 @media (min-width: 800px) {
@@ -516,41 +327,9 @@ form textarea {
   .headings h2 {
     font-size: 1.6em;
   }
-
-  .page {
-    max-width: 500px;
-  }
-  .page p {
-    font-size: 1.2em;
-  }
-  .modal-content {
-    max-width: 580px;
-  }
-
-  .comment-form {
-    max-width: 800px;
-  }
 }
 
 @media (min-width: 1000px) {
-  nav {
-    display: inline-block;
-    background-color: white;
-    position: absolute;
-    top: 35px;
-    right: 10%;
-    font-size: 1.6em;
-    width: 70vw;
-  }
-  ul {
-    display: flex;
-    border: none;
-    gap: 20px;
-    justify-content: space-evenly;
-  }
-  nav a {
-    color: #da2f32;
-  }
   .div-container {
     max-width: 900px;
     gap: 50px;
@@ -573,20 +352,6 @@ form textarea {
   .slider-dots {
     display: block;
   }
-  .page {
-    max-width: 600px;
-  }
-
-  .fa-bars {
-    display: none;
-  }
-
-  .fa-heart {
-    right: 28px;
-  }
-  .modal-content {
-    max-width: 670px;
-  }
 }
 
 /*TEST PAGE*/
@@ -604,3 +369,96 @@ form textarea {
   font-family: "Vidaloka";
   font-weight: 100;
 } */
+
+/*Comment section*/
+
+.comment-form {
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form div {
+  width: 100%;
+}
+
+form div label p {
+  font-size: 1em;
+}
+
+form div input {
+  width: 95%;
+}
+
+form div textarea {
+  width: 95%;
+}
+
+form p {
+  margin: 2px 0;
+}
+
+form textarea {
+  resize: none;
+}
+
+.comment-form__button {
+  padding: 4px 30px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto";
+  background-color: #da2f32;
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  margin: 10px auto;
+}
+
+.comment {
+  margin: 5px 0;
+}
+
+.comment h4 {
+  margin: auto 5px;
+  font-size: 1.1em;
+}
+
+.comment p {
+  margin: 5px;
+}
+
+.comment-date h5 {
+  margin: 5px 2px;
+  font-size: 0.6em;
+  max-width: 90px;
+  opacity: 0.7;
+}
+
+.comment-author {
+  background-color: #da2f3275;
+  display: flex;
+  justify-content: space-between;
+}
+
+.more-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.more-button {
+  padding: 4px 30px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto";
+  background-color: #da2f32;
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+/* MODAL */

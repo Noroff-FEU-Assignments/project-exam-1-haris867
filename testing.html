@@ -43,7 +43,7 @@
                 <a href="index.html" class="active">Home</a>
               </li>
               <li>
-                <a href="posts.html" class="active">Posts</a>
+                <a href="posts.html">Posts</a>
               </li>
               <li>
                 <a href="favourites.html">Favourites</a>
@@ -61,12 +61,12 @@
       <hr class="header-line" />
     </header>
     <div class="headings">
-      <!-- <h1>Barcelona</h1> -->
+      <h1>Barcelona</h1>
     </div>
     <div  class="modal">
         <div class="modal-content">
             <div class="close-button">
-            <span>X</span>
+            <h1>X</h1>
         </div>
         <div class="modal-image">
     
@@ -75,13 +75,30 @@
         
         </div>
     <div class="page">
+        <div class="featured">
+            <img src="images/barcelona.jpg" alt="Photo of Barcelona">
+            <p>Barcelona, Spain - It's the capital of Catalonia, and has a very Spanish feel—a combination of a rich culture and architecture history, with modern buildings and paintings to enjoy, as well being bordering right on the Mediterranean Sea.</p>
+            <p> Not only that, but it has great food and drink options! Whether you're looking for a world-renowned restaurant or a local tapas bar there is something for everyone.</p>
+            <img src="images/campnou.jpg" alt="Photo of Camp Nou">
+            <h3>Camp Nou</h3>
+            <p>Home to FC Barcelona, the Camp Nou stadium is one of Europes largest stadiums with a capacity of over 99 554. Built in 1957, in quickly gained it's reputation as being one of the worlds football temples.</p>
+            <p>Even to this day, there aren’t many stadiums who are able to compete with this huge place of gathering, all of them having been built or heavily renovated in the last ten years. Still, the Camp Nou is set to be renovated as well very soon.</p>
+            <img src="images/lasagradafamilia.jpg" alt="Photo of La Sagrada Familia">
+            <h3>La Sagrada Familia</h3>
+            <p>This wonder of architecture is one the worlds most complex structures and designs. Still unfinished, over a 100 years after the start of construction, it remains one of the most popular tourist attractions in Spain and Barcelona.</p>
+            <p>Designed by Antoni Gaudi in 199999, it is known and renowned for its intricate design and incredible level of detail.</p>
+            <p>The La Sagrada Familia church which will give you an awe-inspiring feeling in itself while also offering plenty more to do within its grounds, like taking part in guided tours—these are free by the way!</p>
+            <img src="images/parcguell.jpg" alt="Photo of Parc Güell">
+            <h3>Parc Güell</h3>
+            <p>Parc Güell is an urban park on Barcelona’s most famous hill, situated in a posh area that was once an industrial zone. Its name is derived from that of its founder, the industrialist Eusebi Güell who asked Antoni Gaudí to design it in the late nineteenth century. This project failed to come to anything at the time but five decades later, in 1922, it was opened to the public as a park.</p>
+            <p>Parc Güell is a must see for tourists visiting Barcelona. Come admire the great architecture, as well as enjoy the many other attractions around it. Ride on a carousel in this beautiful park!</p>
+        </div>
     </div>
     <hr class="header-line" />
-    <div class="comment-form">
+    <div class="page comment-form">
         <form>
-            <input type="hidden" id="postId">
-            <div class="author-info">
-               <div>
+            <input type="hidden" id="postId" value="1">
+            <div>
                 <label for="fullname">
                     <p>Name</p>
                 </label>
@@ -93,8 +110,6 @@
                 </label>
                 <input type="email" id="email">
             </div>
-            </div>
-           
             <div>
                 <label for="comment">
                     <p>Comment</p>
@@ -105,10 +120,11 @@
         </form>
     </div>
     <hr class="header-line" />
-    <div class="comment-section">
+    <div class="page comment-section">
         
     </div>
     <hr class="header-line" />
-    <script src="js/post.js"></script>
+    <script src="js/testing.js"></script>
+    <script src="js/comments.js"></script>
   </body>
 </html>

@@ -1,20 +1,10 @@
-import { getAddedFavourites } from "./utils/favouriteFunctions.js";
 const divContainer = document.querySelector(".div-container");
 const postsUrl =
   "http://localhost/PE1/wp-json/wp/v2/destinations/?acf_format=standard";
 
-const menuIcon = document.querySelector(".fa-bars");
-const nav = document.querySelector("nav");
-
-menuIcon.addEventListener("click", function () {
-  nav.classList.toggle("visible");
-});
-
 async function getPosts(url) {
   const response = await fetch(url);
   const postsArray = await response.json();
-
-  const favourites = getAddedFavourites();
 
   for (let i = 0; i < postsArray.length; i++) {
     const post = postsArray[i].acf;
@@ -33,19 +23,6 @@ async function getPosts(url) {
     const activity3Title = post.activity3Title;
     const activity3Text = post.activity3Text;
 
-    const favourites = getAddedFavourites();
-
-    var favouriteClass = "fa-heart";
-
-    const isFavouriteAdded = favourites.find(function (fav) {
-      return fav.title === title;
-    });
-    console.log(isFavouriteAdded);
-
-    if (!isFavouriteAdded) {
-      favouriteClass = "fa-heart-o";
-    }
-
     divContainer.innerHTML += `<div class="featured">
                                   <a href="post.html?id=${id}">
                                     <img src="${mainImage}" alt="Image of ${title}">
@@ -55,62 +32,24 @@ async function getPosts(url) {
                                         <h3>${title}</h3>
                                       </a>
                                         <div class="featured-icon">
-                                        <i class="fa ${favouriteClass}" aria-hidden="true" title="Add to favourites" data-id="${id}" data-image="${mainImage}" data-title="${title}"></i>
+                                        <i class="fa fa-heart-o" aria-hidden="true" title="Add to favourites"></i>
                                         </div>
                                       </div>
                                                 
                                 </div>`;
 
-    divContainer.classList.remove("loading");
-    const viewMoreButtonContainer = document.querySelector(
-      ".more-button-container"
-    );
-    viewMoreButtonContainer.style.display = "flex";
-    handleClick();
+    const heartIcon = document.querySelectorAll(".featured-icon i");
+
+    heartIcon.forEach(function (heart) {
+      heart.addEventListener("click", function () {
+        heart.classList.toggle("fa-heart-o");
+        heart.classList.toggle("fa-heart");
+      });
+    });
   }
 }
 
 getPosts(postsUrl);
-
-function handleClick() {
-  const favouriteButton = document.querySelectorAll(".featured-icon i");
-
-  favouriteButton.forEach(function (heart) {
-    heart.addEventListener("click", function () {
-      heart.classList.toggle("fa-heart-o");
-      heart.classList.toggle("fa-heart");
-
-      const image = this.dataset.image;
-      const title = this.dataset.title;
-      const id = this.dataset.id;
-
-      const currentFavourites = getAddedFavourites();
-
-      const alreadyAdded = currentFavourites.find(function (fav) {
-        return fav.title === title;
-      });
-
-      console.log(alreadyAdded);
-
-      if (!alreadyAdded) {
-        const post = { title: title, id: id, image: image };
-        currentFavourites.push(post);
-        addFavourites(currentFavourites);
-      } else {
-        const newFavourites = currentFavourites.filter(function (fav) {
-          return fav.title !== title;
-        });
-        addFavourites(newFavourites);
-      }
-    });
-  });
-}
-
-function addFavourites(fav) {
-  localStorage.setItem("favourites", JSON.stringify(fav));
-}
-
-//View more-button
 
 const viewMoreButton = document.querySelector(".more-button");
 const viewMoreUrl =
