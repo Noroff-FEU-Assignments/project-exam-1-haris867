@@ -1,5 +1,5 @@
 const apiUrl =
-  "http://localhost/PE1/wp-json/wp/v2/destinations/?acf_format=standard&per_page=12";
+  "https://haris13.site/Traveldestinations/wp-json/wp/v2/destinations/?acf_format=standard&per_page=12";
 
 async function getPostsforSlider(url) {
   const slidesContainer = document.querySelector(".slides-container");
@@ -23,7 +23,7 @@ async function getPostsforSlider(url) {
                                               <img src="${mainImage}" alt="Photo of ${title}" />
                                               </a>
                                               <h4>${title}</h4>
-                                              <a href="post.html?id=${post.id}" class="slide-button">
+                                              <a href="post.html?id=${post.id}" class="button">
                                               READ NOW
                                               </a>
                                           </div>

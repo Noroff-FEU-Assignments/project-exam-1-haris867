@@ -6,14 +6,14 @@ menuIcon.addEventListener("click", function () {
 });
 
 const contactUrl =
-  "http://localhost/PE1/wp-json/contact-form-7/v1/contact-forms/46/feedback";
+  "https://haris13.site/Traveldestinations/wp-json/contact-form-7/v1/contact-forms/46/feedback";
 const form = document.querySelector("form");
 
 form.addEventListener("submit", postContactForm);
 
 async function postContactForm(event) {
-  const list = [fullname, email, subject, comment];
-  console.log(list);
+  // const list = [fullname, email, subject, comment];
+  // console.log(list);
   const contact_form = document.querySelector("#contact_form");
   let formData = new FormData(contact_form);
   console.log({ formData });

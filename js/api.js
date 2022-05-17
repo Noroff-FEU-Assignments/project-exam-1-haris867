@@ -1,7 +1,7 @@
 import { getAddedFavourites } from "./utils/favouriteFunctions.js";
 const divContainer = document.querySelector(".div-container");
 const postsUrl =
-  "http://localhost/PE1/wp-json/wp/v2/destinations/?acf_format=standard";
+  "https://haris13.site/Traveldestinations/wp-json/wp/v2/destinations/?acf_format=standard";
 
 const menuIcon = document.querySelector(".fa-bars");
 const nav = document.querySelector("nav");
@@ -114,7 +114,7 @@ function addFavourites(fav) {
 
 const viewMoreButton = document.querySelector(".more-button");
 const viewMoreUrl =
-  "http://localhost/PE1/wp-json/wp/v2/destinations/?acf_format=standard&per_page=20";
+  "https://haris13.site/Traveldestinations/wp-json/wp/v2/destinations/?acf_format=standard&per_page=20";
 
 viewMoreButton.addEventListener("click", function () {
   getPosts(viewMoreUrl);
@@ -124,3 +124,26 @@ viewMoreButton.addEventListener("click", function () {
     window.scrollTo(0, document.body.scrollHeight);
   }, 1000);
 });
+
+// Search function
+
+const searchButton = document.querySelector(".search button");
+const searchInput = document.querySelector(".search input");
+
+searchButton.addEventListener("click", function () {
+  const searchUrl =
+    "https://haris13.site/Traveldestinations/wp-json/wp/v2/destinations/?acf_format=standard&search=" +
+    searchInput.value;
+  console.log(searchInput.value);
+  divContainer.classList.add("loading");
+  viewMoreButton.style.display = "none";
+  getPosts(searchUrl);
+  divContainer.innerHTML = "";
+});
+
+searchInput.onkeyup = function (event) {
+  console.log(event);
+  if (event.keyCode === 13) {
+    searchButton.click();
+  }
+};

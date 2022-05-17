@@ -51,7 +51,7 @@ async function getPosts(url) {
                                     <div class="slide-post">
                                         <a href="post.html?id=${id}"><img src="${mainImage}" alt="Photo of ${title}" /></a>
                                         <h4>${title}</h4>
-                                        <a href="post.html?id=${id}" class="slide-button">
+                                        <a href="post.html?id=${id}" class="button">
                                         READ NOW
                                         </a>
                                     </div>
