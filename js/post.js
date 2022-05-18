@@ -36,8 +36,9 @@ async function getPost(url) {
                                 ${postContent.activity3Text}
                             </div>`;
 
+  const commentForm = document.querySelector(".comment-form");
+  commentForm.style.display = "block";
   displayModal();
-
   getComments();
 }
 
