@@ -22,8 +22,7 @@ body {
 
 .header-line {
   border: solid 1px #da2f32;
-  margin: 0 28px 0 28px;
-  margin-top: 0;
+  margin: 0 28px;
 }
 
 .icons i {
@@ -197,39 +196,18 @@ nav a {
   font-size: 0.8em;
 }
 
-/* .slide:nth-child(1) {
-  left: 0;
-}
-.slide:nth-child(2) {
-  left: 50%;
-}
-.slide:nth-child(3) {
-  left: 200%;
-}
-.slide:nth-child(4) {
-  left: 300%;
+.appear {
+  animation: show-slider 3s forwards;
 }
 
-.slide {
-  transform: translateX(0%);
-} */
-
-/* @media (min-width: 800px) {
-  .slides-container {
-    max-width: 515px;
+@keyframes show-slider {
+  0% {
+    opacity: 0;
   }
-  .slider-heading {
-    max-width: 515px;
+  100% {
+    opacity: 1;
   }
-} */
-/* @media (min-width: 1050px) {
-  .slides-container {
-    max-width: 900px;
-  }
-  .slider-heading {
-    max-width: 900px;
-  }
-} */
+}
 
 /*TEST FLEX-CONTAINER*/
 
@@ -310,12 +288,13 @@ nav a {
 .page img {
   max-width: 100%;
   border: solid 1px #da2f32;
+  margin-top: 20px;
 }
 
 /*Comment section*/
 
 .comment-form {
-  margin: 0 28px;
+  margin: 10px 28px;
   display: none;
 }
 .comment-section {
@@ -428,8 +407,9 @@ form textarea {
 .close-button {
   display: flex;
   justify-content: flex-end;
-  margin: 10px;
-  font-size: 1.5em;
+  color: #da2f32;
+  margin: 10px 0;
+  font-size: 2em;
   cursor: pointer;
 }
 
@@ -508,8 +488,11 @@ form textarea {
   .page p {
     font-size: 1.1em;
   }
+  .page-content img {
+    margin-top: 30px;
+  }
   .modal-content {
-    max-width: 470px;
+    max-width: 550px;
   }
   .author-info {
     display: flex;
@@ -518,7 +501,7 @@ form textarea {
     width: 97%;
   }
   .comment-form {
-    margin: 0 100px;
+    margin: 10px 100px;
   }
   .comment-section {
     margin: 0 100px;
@@ -566,7 +549,7 @@ form textarea {
     font-size: 1.2em;
   }
   .modal-content {
-    max-width: 580px;
+    max-width: 650px;
   }
 
   .button {
@@ -576,7 +559,7 @@ form textarea {
     width: 290px;
   }
   .comment-form {
-    margin: 0 150px;
+    margin: 10px 150px;
   }
 
   .comment-section {
@@ -659,10 +642,10 @@ form textarea {
     right: 28px;
   }
   .modal-content {
-    max-width: 670px;
+    max-width: 800px;
   }
   .comment-form {
-    margin: 0 250px;
+    margin: 10px 250px;
   }
   .comment-section {
     margin: 0 250px;
@@ -678,19 +661,3 @@ form textarea {
     font-size: 1.3em;
   }
 }
-
-/*TEST PAGE*/
-
-/* .page h1 {
-  color: black;
-  font-family: "Vidaloka";
-  font-weight: 100;
-  margin-top: 9px;
-  font-size: 1.65em;
-} */
-
-/* .page-featured h2 {
-  font-size: 1.2em;
-  font-family: "Vidaloka";
-  font-weight: 100;
-} */

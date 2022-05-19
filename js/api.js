@@ -132,7 +132,7 @@ const searchInput = document.querySelector(".search input");
 
 searchButton.addEventListener("click", function () {
   const searchUrl =
-    "https://haris13.site/Traveldestinations/wp-json/wp/v2/destinations/?acf_format=standard&search=" +
+    "https://haris13.site/Traveldestinations/wp-json/wp/v2/destinations/?acf_format=standard&per_page=20&search=" +
     searchInput.value;
   console.log(searchInput.value);
   divContainer.classList.add("loading");

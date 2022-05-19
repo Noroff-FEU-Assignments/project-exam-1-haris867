@@ -47,7 +47,7 @@ getPost(postUrl);
 function displayModal() {
   const postImage = document.querySelectorAll(".page-content img");
   const modal = document.querySelector(".modal");
-  const closeButton = document.querySelector(".close-button span");
+  const closeButton = document.querySelector(".close-button i");
   const modalImageContainer = document.querySelector(".modal-image");
   const nav = document.querySelector("nav");
 
