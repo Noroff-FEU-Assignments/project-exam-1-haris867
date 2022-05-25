@@ -12,11 +12,8 @@ const form = document.querySelector("form");
 form.addEventListener("submit", postContactForm);
 
 async function postContactForm(event) {
-  // const list = [fullname, email, subject, comment];
-  // console.log(list);
   const contact_form = document.querySelector("#contact_form");
   let formData = new FormData(contact_form);
-  console.log({ formData });
   event.preventDefault();
 
   const body = JSON.stringify({
@@ -26,15 +23,81 @@ async function postContactForm(event) {
     "your-message": comment.value,
   });
 
-  console.log(body);
-
   const response = await fetch(contactUrl, {
     method: "post",
-    // headers: {
-    //   "Content-Type": "application/json",
-    // },
     body: formData,
   });
+}
 
-  console.log(response);
+// Form validation
+
+const errorMessage = document.querySelector(".error-message");
+
+const nameError = document.querySelector(".name-error");
+const nameInput = document.querySelector(".form-name");
+
+const emailError = document.querySelector(".email-error");
+const emailInput = document.querySelector(".form-email");
+
+const subjectError = document.querySelector(".subject-error");
+const subjectInput = document.querySelector(".form-subject");
+
+const messageError = document.querySelector(".message-error");
+const messageInput = document.querySelector(".form-message");
+
+const successMessage = document.querySelector(".success-message");
+
+function validateForm(event) {
+  event.preventDefault();
+
+  if (validateLength(nameInput.value, 0)) {
+    nameError.style.display = "none";
+  } else {
+    nameError.style.display = "block";
+  }
+
+  if (validateLength(subjectInput.value, 10)) {
+    subjectError.style.display = "none";
+  } else {
+    subjectError.style.display = "block";
+  }
+
+  if (validateLength(messageInput.value, 25)) {
+    messageError.style.display = "none";
+  } else {
+    messageError.style.display = "block";
+  }
+  if (checkEmail(emailInput.value)) {
+    emailError.style.display = "none";
+  } else {
+    emailError.style.display = "block";
+  }
+
+  if (
+    validateLength(nameInput.value, 5) &&
+    validateLength(subjectInput.value, 15) &&
+    validateLength(messageInput.value, 25) &&
+    checkEmail(emailInput.value)
+  ) {
+    successMessage.innerHTML = `<span>The form has been submitted!</span>`;
+    form.reset();
+  } else {
+    successMessage.innerHTML = ``;
+  }
+}
+
+form.addEventListener("submit", validateForm);
+
+function validateLength(input, length) {
+  if (input.trim().length > length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkEmail(email) {
+  const regEx = /\S+@\S+\.\S+/;
+  const validEmail = regEx.test(email);
+  return validEmail;
 }

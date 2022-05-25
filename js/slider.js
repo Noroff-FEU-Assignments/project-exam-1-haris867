@@ -5,9 +5,7 @@ async function getPostsforSlider(url) {
   const slidesContainer = document.querySelector(".slides-container");
 
   const response = await fetch(url);
-  console.log(response);
   const posts = await response.json();
-  console.log(posts);
 
   posts.forEach(function (post) {
     const singlePost = post.acf;
@@ -15,7 +13,6 @@ async function getPostsforSlider(url) {
 
     const mainImage = singlePost.mainImage;
     const title = singlePost.title;
-    console.log(mainImage);
 
     slidesContainer.innerHTML += `<div class="slide">
                                           <div class="slide-post">
@@ -41,7 +38,6 @@ function slideShow() {
     }
     if (window.innerWidth < 1000) {
       slide.style.left = `${index * 100}%`;
-      console.log("100");
     }
   });
 
@@ -52,7 +48,6 @@ function slideShow() {
       }
       if (window.innerWidth < 1000) {
         slide.style.left = `${index * 100}%`;
-        console.log("100");
       }
     });
   });
@@ -60,13 +55,11 @@ function slideShow() {
   var counter = 0;
   nextButton.addEventListener("click", function () {
     counter++;
-    console.log(counter);
     slideShow();
     dotsChange();
   });
   previousButton.addEventListener("click", function () {
     counter--;
-    console.log(counter);
     slideShow();
     dotsChange();
   });
@@ -96,8 +89,6 @@ function slideShow() {
     for (var i = 0; i < dots.length; i++) {
       dots[i].style.backgroundColor = "white";
       dots[counter].style.backgroundColor = "#DA2F32";
-      console.log(i);
-      console.log(counter);
     }
   }
 }

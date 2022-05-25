@@ -81,21 +81,26 @@
       </div>
       
         <form id="contact_form" title="Contact form" name="contact_form">
+          <div class="success-message"></div>
             <div>
                 <label for="fullname">Name</label>
-                <input type="text" id="fullname" name="your-name">
+                <p class="error-message name-error">Please enter your name</p>
+                <input type="text" id="fullname" name="your-name" class="form-name">
             </div>
             <div>
                 <label for="email">Email</label>
-                <input type="email" id="email" name="your-email">
+                <p class="error-message email-error">Please enter a valid e-mail address</p>
+                <input type="email" id="email" name="your-email" class="form-email">
             </div>
             <div>
                 <label for="subject">Subject</label>
-                <input type="text" id="subject" name="your-subject">
+                <p class="error-message subject-error">Your subject must be at least 15 characters</p>
+                <input type="text" id="subject" name="your-subject" class="form-subject">
             </div>
             <div>
                 <label for="comment">Comment</label>
-                <textarea id="comment" cols="30" rows="10" name="your-message"></textarea>
+                <p class="error-message message-error">Your message must be at least 25 characters</p>
+                <textarea id="comment" cols="30" rows="10" name="your-message" class="form-message"></textarea>
             </div>
             <div class="contact-button">
               <input type="submit" value="Submit" class="button">

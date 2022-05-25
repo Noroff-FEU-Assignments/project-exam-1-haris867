@@ -7,14 +7,12 @@ const postUrl =
   "https://haris13.site/Traveldestinations/wp-json/wp/v2/destinations/" +
   id +
   "?acf_format=standard";
-console.log(id);
 
 async function getPost(url) {
   const response = await fetch(url);
 
   const post = await response.json();
   const postContent = post.acf;
-  console.log(postContent);
   document.title = "Travel Destinations | " + postContent.title;
 
   headingContainer.innerHTML = `<h1>${postContent.title}</h1>`;
@@ -56,7 +54,6 @@ function displayModal() {
       modal.style.display = "block";
       nav.style.zIndex = "-1";
       modalImageContainer.innerHTML = image.outerHTML;
-      console.log(image.outerHTML);
     });
   });
 
@@ -99,8 +96,6 @@ async function postComments(event) {
     body: data,
   });
 
-  console.log(data);
-
   getComments();
 }
 
@@ -111,7 +106,6 @@ const commentSection = document.querySelector(".comment-section");
 async function getComments() {
   const response = await fetch(commentsUrl + id);
   const result = await response.json();
-  console.log(result);
 
   commentSection.innerHTML = "";
 

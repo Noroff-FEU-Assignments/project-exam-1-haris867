@@ -11,42 +11,42 @@ menuIcon.addEventListener("click", function () {
 });
 
 async function getPosts(url) {
-  const response = await fetch(url);
-  const postsArray = await response.json();
-
-  const favourites = getAddedFavourites();
-
-  for (let i = 0; i < postsArray.length; i++) {
-    const post = postsArray[i].acf;
-    const id = postsArray[i].id;
-
-    const title = post.title;
-    const mainImage = post.mainImage;
-    const mainText = post.mainText;
-    const activity1Image = post.activity1Image;
-    const activity1Title = post.activity1Title;
-    const activity1Text = post.activity1Text;
-    const activity2Image = post.activity2Image;
-    const activity2Title = post.activity2Title;
-    const activity2Text = post.activity2Text;
-    const activity3Image = post.activity3Image;
-    const activity3Title = post.activity3Title;
-    const activity3Text = post.activity3Text;
+  try {
+    const response = await fetch(url);
+    const postsArray = await response.json();
 
     const favourites = getAddedFavourites();
 
-    var favouriteClass = "fa-heart";
+    for (let i = 0; i < postsArray.length; i++) {
+      const post = postsArray[i].acf;
+      const id = postsArray[i].id;
 
-    const isFavouriteAdded = favourites.find(function (fav) {
-      return fav.title === title;
-    });
-    console.log(isFavouriteAdded);
+      const title = post.title;
+      const mainImage = post.mainImage;
+      const mainText = post.mainText;
+      const activity1Image = post.activity1Image;
+      const activity1Title = post.activity1Title;
+      const activity1Text = post.activity1Text;
+      const activity2Image = post.activity2Image;
+      const activity2Title = post.activity2Title;
+      const activity2Text = post.activity2Text;
+      const activity3Image = post.activity3Image;
+      const activity3Title = post.activity3Title;
+      const activity3Text = post.activity3Text;
 
-    if (!isFavouriteAdded) {
-      favouriteClass = "fa-heart-o";
-    }
+      const favourites = getAddedFavourites();
 
-    divContainer.innerHTML += `<div class="featured">
+      var favouriteClass = "fa-heart";
+
+      const isFavouriteAdded = favourites.find(function (fav) {
+        return fav.title === title;
+      });
+
+      if (!isFavouriteAdded) {
+        favouriteClass = "fa-heart-o";
+      }
+
+      divContainer.innerHTML += `<div class="featured">
                                   <a href="post.html?id=${id}">
                                     <img src="${mainImage}" alt="Image of ${title}">
                                   </a>
@@ -61,12 +61,16 @@ async function getPosts(url) {
                                                 
                                 </div>`;
 
+      divContainer.classList.remove("loading");
+      const viewMoreButtonContainer = document.querySelector(
+        ".more-button-container"
+      );
+      viewMoreButtonContainer.style.display = "flex";
+      handleClick();
+    }
+  } catch (error) {
     divContainer.classList.remove("loading");
-    const viewMoreButtonContainer = document.querySelector(
-      ".more-button-container"
-    );
-    viewMoreButtonContainer.style.display = "flex";
-    handleClick();
+    divContainer.innerHTML = `<div class="box"><h3>An error occurred</h3></div>`;
   }
 }
 
@@ -89,8 +93,6 @@ function handleClick() {
       const alreadyAdded = currentFavourites.find(function (fav) {
         return fav.title === title;
       });
-
-      console.log(alreadyAdded);
 
       if (!alreadyAdded) {
         const post = { title: title, id: id, image: image };
@@ -134,7 +136,6 @@ searchButton.addEventListener("click", function () {
   const searchUrl =
     "https://haris13.site/Traveldestinations/wp-json/wp/v2/destinations/?acf_format=standard&per_page=20&search=" +
     searchInput.value;
-  console.log(searchInput.value);
   divContainer.classList.add("loading");
   viewMoreButton.style.display = "none";
   getPosts(searchUrl);
@@ -142,7 +143,6 @@ searchButton.addEventListener("click", function () {
 });
 
 searchInput.onkeyup = function (event) {
-  console.log(event);
   if (event.keyCode === 13) {
     searchButton.click();
   }
