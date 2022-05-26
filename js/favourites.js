@@ -1,11 +1,5 @@
 import { getAddedFavourites } from "./utils/favouriteFunctions.js";
-
-const menuIcon = document.querySelector(".fa-bars");
-const nav = document.querySelector("nav");
-
-menuIcon.addEventListener("click", function () {
-  nav.classList.toggle("visible");
-});
+import { menuToggle } from "./utils/menuFunction.js";
 
 const favourites = getAddedFavourites();
 

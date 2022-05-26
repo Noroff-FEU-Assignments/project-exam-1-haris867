@@ -1,15 +1,10 @@
-const menuIcon = document.querySelector(".fa-bars");
-const nav = document.querySelector("nav");
-
-menuIcon.addEventListener("click", function () {
-  nav.classList.toggle("visible");
-});
+import { menuToggle } from "./utils/menuFunction.js";
 
 const contactUrl =
   "https://haris13.site/Traveldestinations/wp-json/contact-form-7/v1/contact-forms/46/feedback";
 const form = document.querySelector("form");
 
-form.addEventListener("submit", postContactForm);
+// form.addEventListener("submit", postContactForm);
 
 async function postContactForm(event) {
   const contact_form = document.querySelector("#contact_form");
@@ -50,13 +45,13 @@ const successMessage = document.querySelector(".success-message");
 function validateForm(event) {
   event.preventDefault();
 
-  if (validateLength(nameInput.value, 0)) {
+  if (validateLength(nameInput.value, 5)) {
     nameError.style.display = "none";
   } else {
     nameError.style.display = "block";
   }
 
-  if (validateLength(subjectInput.value, 10)) {
+  if (validateLength(subjectInput.value, 15)) {
     subjectError.style.display = "none";
   } else {
     subjectError.style.display = "block";
@@ -79,6 +74,7 @@ function validateForm(event) {
     validateLength(messageInput.value, 25) &&
     checkEmail(emailInput.value)
   ) {
+    postContactForm(event);
     successMessage.innerHTML = `<span>The form has been submitted!</span>`;
     form.reset();
   } else {

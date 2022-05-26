@@ -1,14 +1,9 @@
 import { getAddedFavourites } from "./utils/favouriteFunctions.js";
+import { menuToggle } from "./utils/menuFunction.js";
+
 const divContainer = document.querySelector(".div-container");
 const postsUrl =
   "https://haris13.site/Traveldestinations/wp-json/wp/v2/destinations/?acf_format=standard";
-
-const menuIcon = document.querySelector(".fa-bars");
-const nav = document.querySelector("nav");
-
-menuIcon.addEventListener("click", function () {
-  nav.classList.toggle("visible");
-});
 
 async function getPosts(url) {
   try {
@@ -145,5 +140,8 @@ searchButton.addEventListener("click", function () {
 searchInput.onkeyup = function (event) {
   if (event.keyCode === 13) {
     searchButton.click();
+  } else if (searchInput.value === "") {
+    divContainer.innerHTML = "";
+    getPosts(viewMoreUrl);
   }
 };

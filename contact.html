@@ -68,17 +68,13 @@
       </nav>
 
       </div>
-      <hr class="header-line" />
+      <hr class="divider-line" />
     </header>
     <div class="headings">
       <h1>Contact</h1>
     </div>
     <div class="page contact-form">
-      <div class="contact-text">
-      <p>Write to us!</p>
-      <i class="fa fa-envelope-o" aria-hidden="true"></i>
-
-      </div>
+      <img src="images/contactform.jpg" alt="">
       
         <form id="contact_form" title="Contact form" name="contact_form">
           <div class="success-message"></div>
@@ -100,13 +96,38 @@
             <div>
                 <label for="comment">Comment</label>
                 <p class="error-message message-error">Your message must be at least 25 characters</p>
-                <textarea id="comment" cols="30" rows="10" name="your-message" class="form-message"></textarea>
+                <textarea placeholder="Write to us!" id="comment" cols="30" rows="10" name="your-message" class="form-message"></textarea>
             </div>
             <div class="contact-button">
-              <input type="submit" value="Submit" class="button">
+              <input type="submit" value="SUBMIT" class="button">
             </div>
         </form>
     </div>
-    <script src="js/contact.js"></script>
+    <footer>
+          <hr class="divider-line" />
+          <div class="footer-content">
+            <div>
+              <img src="images/footerlogo.png" alt="Logo for Travel Destinations">
+            </div>
+            <div class="footer-links">
+              <h4>Links</h4>
+              <ul>
+                <li>
+                  <a href="posts.html">Posts</a>
+                </li>
+                <li>
+                  <a href="about.html">About Us</a>
+                </li>
+                <li>
+                  <a href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            Travel Destinations &copy; 2022
+          </div>
+        </footer>
+    <script type="module" src="js/contact.js"></script>
   </body>
 </html>

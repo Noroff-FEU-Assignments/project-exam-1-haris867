@@ -1,3 +1,5 @@
+import { menuToggle } from "./utils/menuFunction.js";
+
 const apiUrl =
   "https://haris13.site/Traveldestinations/wp-json/wp/v2/destinations/?acf_format=standard&per_page=12";
 
