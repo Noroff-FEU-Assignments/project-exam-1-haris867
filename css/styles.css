@@ -5,7 +5,7 @@ html {
 body {
   color: black;
   margin: 0;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
 }
 
 .logo-container a {
@@ -46,7 +46,7 @@ nav {
   right: 0px;
   font-size: 1.4em;
   background-color: white;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   z-index: 1;
 }
 
@@ -486,7 +486,7 @@ form textarea {
   padding: 4px 25px;
   border-radius: 5px;
   border: none;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   background-color: #da2f32;
   color: white;
   text-decoration: none;
