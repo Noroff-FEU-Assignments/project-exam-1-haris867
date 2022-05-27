@@ -183,9 +183,8 @@ footer p {
 
 .page {
   max-width: 300px;
-  margin: 10px auto;
+  margin: 10px auto 120px auto;
   color: black;
-  margin-bottom: 100px;
 }
 
 .page p {
@@ -350,7 +349,11 @@ form div textarea {
 
 .div-container {
   max-width: 300px;
-  margin: -40px auto 100px auto;
+  margin: -40px auto 120px auto;
+}
+
+.featured {
+  margin-bottom: 20px;
 }
 
 .featured img {
@@ -386,7 +389,7 @@ form div textarea {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin: 10px 0 50px 0;
+  margin: 10px 0 60px 0;
 }
 
 .loading {
@@ -483,8 +486,12 @@ form textarea {
 
 .more-button {
   font-size: 1em;
-  margin: 10px auto;
+  margin: -80px auto 110px auto;
   cursor: pointer;
+}
+
+.posts-container {
+  margin-bottom: 100px;
 }
 
 .modal {
@@ -731,7 +738,7 @@ form textarea {
   }
 
   .search {
-    margin-bottom: 70px;
+    margin-bottom: 80px;
   }
   .search input {
     width: 290px;
