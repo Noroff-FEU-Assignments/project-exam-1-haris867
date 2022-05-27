@@ -16,12 +16,12 @@ body {
 
 .logo {
   max-width: 230px;
-  margin: 20px 28px 15px -15px;
+  margin: 20px 28px 15px 5px;
 }
 
 .divider-line {
   border: solid 1px #da2f32;
-  /* margin: 0 28px; */
+  margin: 0 28px;
 }
 
 .icons i {
@@ -85,13 +85,14 @@ nav a {
 }
 
 .footer-content img {
-  max-width: 100px;
-  margin-left: -20px;
+  max-width: 110px;
+  margin-left: 20px;
 }
 
 .footer-links {
   color: black;
-  margin: 10px 28px 0 0;
+  margin-right: 28px;
+  display: block;
 }
 
 .footer-links h4 {
@@ -110,19 +111,12 @@ nav a {
 
 footer a {
   text-decoration: none;
-  color: white;
+  color: #da2f32;
 }
 
 .footer-copyright {
   text-align: center;
   font-size: 0.8em;
-  color: white;
-  max-width: 100px;
-  margin-top: 20px;
-}
-
-footer p {
-  margin: 0;
 }
 
 .button:before {
@@ -203,7 +197,6 @@ footer p {
 
 .slide img {
   max-width: 98%;
-  /* border: solid 1px #da2f32; */
 }
 
 .slide h4 {
@@ -271,12 +264,12 @@ footer p {
 
 .div-container {
   max-width: 300px;
-  margin: -25px auto 10px auto;
+  margin: 10px auto;
 }
 
-/* .featured {
+.featured {
   margin-bottom: 25px;
-} */
+}
 
 .featured img {
   max-width: 100%;
@@ -538,41 +531,6 @@ form textarea {
   margin: 10px auto;
 }
 
-/*TEST*/
-
-header {
-  width: 85%;
-  margin: 0 auto;
-}
-
-.divider-line {
-  margin: 0 auto;
-}
-
-.divider {
-  margin: 0 auto;
-}
-
-.card {
-  filter: brightness(55%);
-}
-.featured-text {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 120px;
-}
-
-.featured h3 {
-  color: white;
-  z-index: 1000;
-  font-size: 2em;
-}
-
-footer {
-  background-color: #da2f32;
-}
-
 @media (min-width: 600px) {
   .footer-content img {
     max-width: 120px;
@@ -603,11 +561,6 @@ footer {
     max-width: 400px;
     height: 300px;
   }
-
-  .featured-text {
-    top: 150px;
-  }
-
   .page {
     max-width: 400px;
   }
@@ -734,8 +687,8 @@ footer {
     position: absolute;
     top: 35px;
     right: 10%;
-    font-size: 1.3em;
-    width: 45vw;
+    font-size: 1.6em;
+    width: 62vw;
   }
   ul {
     display: flex;
@@ -749,6 +702,10 @@ footer {
 
   .footer-links ul {
     display: block;
+  }
+
+  .headings {
+    width: 80%;
   }
 
   .headings h1 {

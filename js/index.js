@@ -2,34 +2,37 @@ import { menuToggle } from "./utils/menuFunction.js";
 
 const apiUrl =
   "https://haris13.site/Traveldestinations/wp-json/wp/v2/destinations/?acf_format=standard&per_page=12";
+const slidesContainer = document.querySelector(".slides-container");
 
 async function getPostsforSlider(url) {
-  const slidesContainer = document.querySelector(".slides-container");
+  try {
+    const response = await fetch(url);
+    const posts = await response.json();
 
-  const response = await fetch(url);
-  const posts = await response.json();
+    posts.forEach(function (post) {
+      const singlePost = post.acf;
+      const id = posts.id;
 
-  posts.forEach(function (post) {
-    const singlePost = post.acf;
-    const id = posts.id;
+      const mainImage = singlePost.mainImage;
+      const title = singlePost.title;
 
-    const mainImage = singlePost.mainImage;
-    const title = singlePost.title;
-
-    slidesContainer.innerHTML += `<div class="slide">
+      slidesContainer.innerHTML += `<div class="slide">
                                           <div class="slide-post">
                                               <a href="post.html?id=${post.id}">
                                               <img src="${mainImage}" alt="Photo of ${title}" />
                                               </a>
                                               <h4>${title}</h4>
-                                              <a href="post.html?id=${post.id}" class="button">
+                                              <a href="post.html?id=${post.id}" class="button button-effect">
                                               READ NOW
                                               </a>
                                           </div>
                                           </div>`;
 
-    slideShow();
-  });
+      slideShow();
+    });
+  } catch (error) {
+    slidesContainer.innerHTML = `<div><p>An error occured</p></div>`;
+  }
 }
 
 function slideShow() {

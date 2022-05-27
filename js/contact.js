@@ -4,8 +4,6 @@ const contactUrl =
   "https://haris13.site/Traveldestinations/wp-json/contact-form-7/v1/contact-forms/46/feedback";
 const form = document.querySelector("form");
 
-// form.addEventListener("submit", postContactForm);
-
 async function postContactForm(event) {
   const contact_form = document.querySelector("#contact_form");
   let formData = new FormData(contact_form);

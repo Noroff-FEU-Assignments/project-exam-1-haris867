@@ -1,11 +1,20 @@
+/* GLOBAL */
+
 html {
   scroll-behavior: smooth;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
   color: black;
   margin: 0;
   font-family: "Roboto", sans-serif;
+}
+
+header {
+  width: 85%;
+  margin: 0 auto;
 }
 
 .logo-container a {
@@ -16,12 +25,12 @@ body {
 
 .logo {
   max-width: 230px;
-  margin: 20px 28px 15px 5px;
+  margin: 20px 28px 15px -15px;
 }
 
 .divider-line {
   border: solid 1px #da2f32;
-  margin: 0 28px;
+  margin: 0 auto;
 }
 
 .icons i {
@@ -68,7 +77,8 @@ li:hover {
 
 nav a {
   text-decoration: none;
-  color: #da2f32;
+  color: black;
+  font-weight: bold;
 }
 
 .visible {
@@ -76,22 +86,31 @@ nav a {
 }
 
 .active {
-  font-weight: bold;
+  color: #da2f32;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #da2f32;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .footer-content img {
-  max-width: 110px;
-  margin-left: 20px;
+  max-width: 100px;
+  margin-left: -45px;
 }
 
 .footer-links {
-  color: black;
-  margin-right: 28px;
+  display: block;
+  margin: 10px 0 10px 0;
 }
 
 .footer-links h4 {
@@ -110,29 +129,18 @@ nav a {
 
 footer a {
   text-decoration: none;
-  color: #da2f32;
+  color: white;
 }
 
 .footer-copyright {
-  text-align: center;
-  font-size: 0.8em;
+  font-size: 0.9em;
+  color: white;
+  max-width: 100px;
+  margin-top: 20px;
 }
 
-.button:before {
-  content: "";
-  padding: 5px;
-  background: white;
-  transform: rotate(45deg);
-  position: absolute;
-  height: 35px;
-  top: 195px;
-  left: -45px;
-  transition: left ease-in-out 1.5s;
-  opacity: 0.3;
-}
-
-.button:hover::before {
-  left: 270px;
+footer p {
+  margin: 0;
 }
 
 .headings {
@@ -162,7 +170,58 @@ footer a {
   color: #da2f32;
 }
 
-/*SLIDER*/
+.button {
+  padding: 4px 25px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  background-color: #da2f32;
+  color: white;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+.page {
+  max-width: 300px;
+  margin: 10px auto;
+  color: black;
+  margin-bottom: 100px;
+}
+
+.page p {
+  font-weight: 300;
+}
+
+.page img {
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+form div {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form div label p {
+  font-size: 0.8em;
+}
+
+form div input {
+  width: 98%;
+  border: solid 1px #da2f32;
+  margin: 5px 0;
+}
+
+form div textarea {
+  width: 98%;
+  border: solid 1px #da2f32;
+}
+
+/* HOME PAGE */
 
 .slider-heading {
   color: black;
@@ -196,7 +255,6 @@ footer a {
 
 .slide img {
   max-width: 98%;
-  /* border: solid 1px #da2f32; */
 }
 
 .slide h4 {
@@ -210,6 +268,23 @@ footer a {
 .slide-post {
   max-width: 100%;
   text-align: center;
+}
+
+.button-effect:before {
+  content: "";
+  padding: 5px;
+  background: white;
+  transform: rotate(45deg);
+  position: absolute;
+  height: 35px;
+  top: 195px;
+  left: -45px;
+  transition: left ease-in-out 1.5s;
+  opacity: 0.3;
+}
+
+.button-effect:hover::before {
+  left: 270px;
 }
 
 .button-container {
@@ -253,6 +328,17 @@ footer a {
   animation: show-slider 3s forwards;
 }
 
+.card {
+  filter: brightness(55%);
+}
+
+.featured-text__home {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 120px;
+}
+
 @keyframes show-slider {
   0% {
     opacity: 0;
@@ -264,16 +350,11 @@ footer a {
 
 .div-container {
   max-width: 300px;
-  margin: 10px auto;
-}
-
-.featured {
-  margin-bottom: 25px;
+  margin: -40px auto 100px auto;
 }
 
 .featured img {
   max-width: 100%;
-  /* border: 1px solid #da2f32; */
 }
 
 .featured-text {
@@ -289,19 +370,23 @@ footer a {
   font-size: 1.3em;
 }
 
+.featured-text__home h3 {
+  color: white;
+  z-index: 1000;
+  font-size: 2em;
+}
+
 .featured a {
   text-decoration: none;
 }
 
-.featured-icon {
-  color: #da2f32;
-  font-size: 1.7em;
-  margin: 5px;
-  z-index: 1000;
-}
+/* POSTS PAGE */
 
-.slide-button {
-  font-size: 0.8em;
+.search {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0 50px 0;
 }
 
 .loading {
@@ -314,6 +399,13 @@ footer a {
   margin-top: 10px;
 }
 
+.featured-icon {
+  color: #da2f32;
+  font-size: 1.7em;
+  margin: 5px;
+  z-index: 1000;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -323,26 +415,6 @@ footer a {
   }
 }
 
-.page {
-  max-width: 300px;
-  margin: 10px auto;
-  color: black;
-}
-
-.page-intro {
-  font-size: 1em;
-}
-
-.page p {
-  font-weight: 300;
-}
-
-.page img {
-  max-width: 100%;
-  /* border: solid 1px #da2f32; */
-  margin-top: 20px;
-}
-
 /*Post page*/
 
 .comment-form {
@@ -350,31 +422,12 @@ footer a {
   display: none;
 }
 .comment-section {
-  margin: 10px 28px;
+  margin: 10px 28px 100px 28px;
 }
 
-form {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-form div {
-  width: 100%;
-}
-
-form div label p {
-  font-size: 0.8em;
-}
-
-form div input {
-  width: 98%;
-  border: solid 1px #da2f32;
-  margin: 5px 0;
-}
-
-form div textarea {
-  width: 98%;
-  border: solid 1px #da2f32;
+.comments-divider {
+  max-width: 85%;
+  margin: 0 auto;
 }
 
 .input p {
@@ -475,24 +528,6 @@ form textarea {
   margin: 10% auto;
 }
 
-.search {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.button {
-  padding: 4px 25px;
-  border-radius: 5px;
-  border: none;
-  font-family: "Roboto", sans-serif;
-  background-color: #da2f32;
-  color: white;
-  text-decoration: none;
-  font-size: 0.8em;
-}
-
 /* Contact page */
 
 .contact-text {
@@ -531,9 +566,21 @@ form textarea {
   margin: 10px auto;
 }
 
+/* FAVOURITES PAGE */
+
+.favourites-container {
+  margin-top: 10px;
+}
+
+/* MEDIA QUERIES */
+
 @media (min-width: 600px) {
+  .footer-copyright {
+    max-width: 155px;
+    margin-top: 31px;
+  }
   .footer-content img {
-    max-width: 120px;
+    margin-left: -95px;
   }
 
   .footer-links h4 {
@@ -546,6 +593,11 @@ form textarea {
 
   .div-container {
     max-width: 400px;
+  }
+
+  .button-effect:before {
+    top: 255px;
+    left: 100px;
   }
 
   .headings h1 {
@@ -561,6 +613,11 @@ form textarea {
     max-width: 400px;
     height: 300px;
   }
+
+  .featured-text__home {
+    top: 150px;
+  }
+
   .page {
     max-width: 400px;
   }
@@ -584,7 +641,7 @@ form textarea {
     margin: 10px 100px;
   }
   .comment-section {
-    margin: 0 100px;
+    margin: 0 100px 100px 100px;
   }
   form div textarea {
     width: 97%;
@@ -611,8 +668,23 @@ form textarea {
     top: 37px;
   }
 
-  footer .divider-line {
-    margin: 30px 28px 0 28px;
+  .footer-content img {
+    margin-left: -15px;
+  }
+
+  .footer-copyright {
+    font-size: 1em;
+    max-width: 193px;
+  }
+
+  .footer-links {
+    margin: 0;
+  }
+
+  .footer-links ul {
+    display: flex;
+    margin-top: 25px;
+    font-size: 1.2em;
   }
 
   .div-container {
@@ -620,11 +692,17 @@ form textarea {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    gap: 61px;
+    margin-top: 30px;
+  }
+
+  .favourites-container {
+    margin-top: 60px;
   }
 
   .featured {
     max-width: 420px;
-    margin: 10px;
+    margin-top: -50px;
   }
 
   .headings h1 {
@@ -651,6 +729,10 @@ form textarea {
   .button {
     font-size: 1.1em;
   }
+
+  .search {
+    margin-bottom: 70px;
+  }
   .search input {
     width: 290px;
   }
@@ -659,7 +741,7 @@ form textarea {
   }
 
   .comment-section {
-    margin: 0 150px;
+    margin: 0 150px 100px 150px;
   }
 
   .headings h3 {
@@ -673,10 +755,6 @@ form textarea {
   }
   .contact-text i {
     font-size: 5em;
-    margin-top: 0;
-  }
-  .footer-copyright {
-    font-size: 1em;
   }
 }
 
@@ -687,8 +765,8 @@ form textarea {
     position: absolute;
     top: 35px;
     right: 10%;
-    font-size: 1.6em;
-    width: 62vw;
+    font-size: 1.3em;
+    width: 45vw;
   }
   ul {
     display: flex;
@@ -696,16 +774,13 @@ form textarea {
     gap: 20px;
     justify-content: space-evenly;
   }
-  nav a {
-    color: #da2f32;
+  .button-effect:before {
+    top: 195px;
+    left: 15px;
   }
 
-  .footer-links ul {
-    display: block;
-  }
-
-  .headings {
-    width: 80%;
+  .footer-content img {
+    margin-left: 20px;
   }
 
   .headings h1 {
@@ -718,10 +793,6 @@ form textarea {
 
   .slide-post {
     max-width: 33.3%;
-  }
-
-  .featured {
-    margin: 0;
   }
   .slides-container {
     max-width: 900px;
@@ -751,11 +822,7 @@ form textarea {
     margin: 10px 250px;
   }
   .comment-section {
-    margin: 0 250px;
-  }
-
-  .search {
-    margin-bottom: 20px;
+    margin: 0 250px 100px 250px;
   }
   .headings h3 {
     font-size: 1.5em;
