@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Travel Destinations</title>
-    <meta name="description" content="This is a blog post on Travel Destinations">
+    <title>Travel Destinations | Home</title>
+    <meta name="description" content="This is the home page for Travel Destinations">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,7 @@
       src="https://kit.fontawesome.com/b5e57b6385.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/test.css" />
     <!-- Hotjar Tracking Code for https://travel-destinations-haris.netlify.app/ -->
 <script>
     (function(h,o,t,j,a,r){
@@ -51,10 +51,10 @@
       <nav class="nav">
              <ul>
               <li>
-                <a href="index.html">Home</a>
+                <a href="index.html" class="active">Home</a>
               </li>
               <li>
-                <a href="posts.html" class="active">Posts</a>
+                <a href="posts.html">Posts</a>
               </li>
               <li>
                 <a href="favourites.html">Favourites</a>
@@ -69,60 +69,86 @@
       </nav>
 
       </div>
-      <hr class="divider-line" />
+      <div class="divider">
+          <hr class="divider-line" />
+      </div>
     </header>
     <div class="headings">
+      <h1>Awesome things to do.</h1>
+      <h2>In all your favorite destinations.</h2>
     </div>
-    <div  class="modal">
-        <div class="modal-content">
-            <div class="close-button">
-            <i class="fa fa-times-circle-o" aria-hidden="true"></i>
-        </div>
-        <div class="modal-image">
-    
-        </div>
-        </div>
-        
-        </div>
-    <div class="page">
+    <div class="slider-heading appear">
+      <h3>Latest posts</h3>
     </div>
-    <hr class="divider-line" />
-    <div class="comment-form">
-        <form>
-            <input type="hidden" id="postId">
-            <div class="author-info">
-               <div>
-                <label for="fullname">
-                    <p>Name</p>
-                </label>
-                <input type="text" id="fullname">
-            </div>
-            <div>
-                <label for="email">
-                    <p>Email</p>
-                </label>
-                <input type="email" id="email">
-            </div>
-            </div>
-           
-            <div>
-                <label for="comment">
-                    <p>Comment</p>
-                </label>
-                <textarea id="comment" rows="2"></textarea>
-            </div>
-            <input class="comment-form__button button" type="submit" value="Post comment!">
-        </form>
+    <div class="slides-container appear">
+  
     </div>
-    <div class="comment-section"></div>
-    <footer>
+    <div class="button-container appear">
+      <i class="fa fa-angle-left previous-button slider-button" aria-hidden="true"></i>
+      <div class="slider-dots">
+        <!-- <i class="fa fa-circle" aria-hidden="true"></i> -->
+        <div class="circle first-dot"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+      <i class="fa fa-angle-right next-button slider-button" aria-hidden="true"></i>
+    </div>
+    <div class="div-container">
+            <div class="featured">
+              
+                <div class="featured-text">
+                    <h3 class="featured-heading">Posts</h3>
+                </div>
+                <a href="posts.html">
+                <div class="card">
+                    <img src="images/posts.jpg" alt="Photo of New York">
+                </div>
+              </a>
+            </div>
+            <div class="featured">
+              <a href="favourites.html">
+                <div class="featured-text">
+                    <h3 class="featured-heading">Favourites</h3>
+                </div>
+                <div class="card">
+                    <img src="images/favourites.jpg" alt="Photo of Loen">
+                </div>
+              </a>
+            </div>
+            <div class="featured">
+              <a href="contact.html">
+                <div class="featured-text">
+                    <h3 class="featured-heading">Contact</h3>
+                </div>
+                <div class="card">
+                    <img src="images/contact.jpg" alt="Photo of Lisbon">
+                </div>
+              </a>
+            </div>
+            <div class="featured">
+                <a href="about.html">
+                  <div class="featured-text">
+                    <h3 class="featured-heading">About</h3>
+                </div>
+                <div class="card">
+                    <img src="images/about.jpg" alt="Image of Amsterdam">
+                </div>
+                </a>
+            </div>
+        </div>
+        <footer>
           <hr class="divider-line" />
           <div class="footer-content">
+              <div class="footer-copyright">
+              <p>
+                  Travel Destinations &copy; 2022
+              </p>
+          </div>
             <div>
               <img src="images/footerlogo.png" alt="Logo for Travel Destinations">
             </div>
             <div class="footer-links">
-              <h4>Links</h4>
               <ul>
                 <li>
                   <a href="posts.html">Posts</a>
@@ -136,10 +162,8 @@
               </ul>
             </div>
           </div>
-          <div class="footer-copyright">
-            Travel Destinations &copy; 2022
-          </div>
         </footer>
-    <script type="module" src="js/post.js"></script>
+        <script type="module" src="js/index.js"></script>
+        
   </body>
 </html>
