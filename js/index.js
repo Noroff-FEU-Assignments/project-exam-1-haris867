@@ -4,6 +4,8 @@ const apiUrl =
   "https://haris13.site/Traveldestinations/wp-json/wp/v2/destinations/?acf_format=standard&per_page=12";
 const slidesContainer = document.querySelector(".slides-container");
 
+// Get posts to display in slider
+
 async function getPostsforSlider(url) {
   try {
     const response = await fetch(url);
@@ -34,6 +36,8 @@ async function getPostsforSlider(url) {
     slidesContainer.innerHTML = `<div><p>An error occured</p></div>`;
   }
 }
+
+// Slider functionality + responsiveness
 
 function slideShow() {
   const slides = document.querySelectorAll(".slide");

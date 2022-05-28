@@ -10,6 +10,8 @@ const postUrl =
   id +
   "?acf_format=standard";
 
+// Display post
+
 async function getPost(url) {
   try {
     const response = await fetch(url);
@@ -47,6 +49,8 @@ async function getPost(url) {
 }
 
 getPost(postUrl);
+
+// Image modal functionality
 
 function displayModal() {
   const postImage = document.querySelectorAll(".page-content img");

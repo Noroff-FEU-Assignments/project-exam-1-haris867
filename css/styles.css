@@ -327,6 +327,15 @@ form div textarea {
   animation: show-slider 3s forwards;
 }
 
+@keyframes show-slider {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .card {
   filter: brightness(55%);
 }
@@ -336,15 +345,6 @@ form div textarea {
   justify-content: center;
   position: relative;
   top: 120px;
-}
-
-@keyframes show-slider {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .div-container {

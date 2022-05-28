@@ -1,5 +1,7 @@
 import { menuToggle } from "./utils/menuFunction.js";
 
+// Send contact form
+
 const contactUrl =
   "https://haris13.site/Traveldestinations/wp-json/contact-form-7/v1/contact-forms/46/feedback";
 const form = document.querySelector("form");

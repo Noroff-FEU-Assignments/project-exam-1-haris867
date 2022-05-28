@@ -18,19 +18,8 @@ async function getPosts(url) {
 
       const title = post.title;
       const mainImage = post.mainImage;
-      const mainText = post.mainText;
-      const activity1Image = post.activity1Image;
-      const activity1Title = post.activity1Title;
-      const activity1Text = post.activity1Text;
-      const activity2Image = post.activity2Image;
-      const activity2Title = post.activity2Title;
-      const activity2Text = post.activity2Text;
-      const activity3Image = post.activity3Image;
-      const activity3Title = post.activity3Title;
-      const activity3Text = post.activity3Text;
 
       const favourites = getAddedFavourites();
-
       var favouriteClass = "fa-heart";
 
       const isFavouriteAdded = favourites.find(function (fav) {
@@ -70,6 +59,8 @@ async function getPosts(url) {
 }
 
 getPosts(postsUrl);
+
+// Add to favourites
 
 function handleClick() {
   const favouriteButton = document.querySelectorAll(".featured-icon i");

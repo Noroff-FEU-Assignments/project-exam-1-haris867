@@ -7,6 +7,8 @@ const divContainer = document.querySelector(".div-container");
 
 const emptyMessage = document.querySelector(".headings h3");
 
+// Display favourited posts
+
 favourites.forEach(function (favourite) {
   emptyMessage.style.display = "none";
   divContainer.innerHTML += `<div class="featured">
