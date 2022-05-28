@@ -5,7 +5,7 @@ const favourites = getAddedFavourites();
 
 const divContainer = document.querySelector(".div-container");
 
-const emptyMessage = document.querySelector(".headings h3");
+const emptyMessage = document.querySelector(".headings h2");
 
 // Display favourited posts
 

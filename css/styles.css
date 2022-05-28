@@ -205,18 +205,19 @@ form {
   flex-wrap: wrap;
 }
 
-form div label p {
+form div label {
   font-size: 0.8em;
+  margin: 2px 0;
 }
 
 form div input {
-  width: 98%;
+  width: 100%;
   border: solid 1px #da2f32;
   margin: 5px 0;
 }
 
 form div textarea {
-  width: 98%;
+  width: 100%;
   border: solid 1px #da2f32;
 }
 
@@ -437,11 +438,6 @@ form div textarea {
   font-size: 0.8em;
 }
 
-form p {
-  margin: 2px 0;
-  font-size: 0.8em;
-}
-
 form textarea {
   resize: none;
 }
@@ -640,9 +636,7 @@ form textarea {
   }
   .author-info {
     display: flex;
-  }
-  form div input {
-    width: 97%;
+    gap: 20px;
   }
   .comment-form {
     margin: 10px 100px;
@@ -651,7 +645,7 @@ form textarea {
     margin: 0 100px 100px 100px;
   }
   form div textarea {
-    width: 97%;
+    width: 100%;
   }
   form div label {
     font-size: 1.1em;
