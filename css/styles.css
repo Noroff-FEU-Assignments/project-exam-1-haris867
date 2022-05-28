@@ -187,6 +187,14 @@ footer p {
   color: black;
 }
 
+.featured h3 {
+  color: black;
+  font-family: "Vidaloka";
+  margin: 0 0 10px 0;
+  font-weight: 100;
+  font-size: 1.3em;
+}
+
 .page p {
   font-weight: 300;
 }
@@ -364,14 +372,6 @@ form div textarea {
 .featured-text {
   display: flex;
   justify-content: space-between;
-}
-
-.featured h3 {
-  color: black;
-  font-family: "Vidaloka";
-  margin: 0 0 10px 0;
-  font-weight: 100;
-  font-size: 1.3em;
 }
 
 .featured-text__home h3 {
@@ -572,7 +572,7 @@ form textarea {
 /* FAVOURITES PAGE */
 
 .favourites-container {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 /* MEDIA QUERIES */
@@ -698,7 +698,7 @@ form textarea {
   }
 
   .favourites-container {
-    margin-top: 60px;
+    margin-top: 70px;
   }
 
   .featured {
